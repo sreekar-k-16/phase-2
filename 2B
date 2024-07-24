@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class CountDigitFour {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        long number = scanner.nextLong();
+        scanner.close();
+
+        int count = 0;
+        while (number != 0) {
+            int digit = (int) (number % 10); // Get the last digit
+            if (digit == 4) {
+                count++; // Increment the count if the digit is 4
+            }
+            number /= 10; // Remove the last digit
+        }
+
+        System.out.println(count);
+    }
+}
