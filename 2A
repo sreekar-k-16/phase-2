@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        long number = scanner.nextLong();
+        scanner.close();
+
+        int sumOdd = 0;
+        int sumEven = 0;
+
+        while (number != 0) {
+            int digit = (int) (number % 10); // Get the last digit
+            if (digit % 2 == 0) {
+                sumEven += digit; // Sum even digits
+            } else {
+                sumOdd += digit; // Sum odd digits
+            }
+            number /= 10; // Remove the last digit
+        }
+
+        System.out.println("sum of odd is "+sumOdd );
+        System.out.println("sum of even is "+sumEven);
+    }
+}
